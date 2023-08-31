@@ -1,4 +1,4 @@
-package Reto_Tecnico.example;
+package Reto_Tecnico;
 
 public class Main {
     public static void main(String[] args) {

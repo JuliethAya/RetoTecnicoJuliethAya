@@ -4,10 +4,12 @@ package Tasks;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Open;
+import userinterface.UserStorypage;
 
 public class Openup implements Task {
-    private userinterface.UserStorypage UserStorypage;
+    private UserStorypage UserStorypage;
     public static Openup thePage() {
         return Tasks.instrumented(Openup.class);
 
@@ -15,6 +17,6 @@ public class Openup implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Open.browserOn(UserStorypage));
+        actor.attemptsTo(Open.browserOn(UserStorypage),Click.on(userinterface.UserStorypage.REGISTER_BUTTON));
     }
 }
